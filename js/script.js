@@ -8,61 +8,23 @@ var app = new Vue(
     {
         el:'#root',
         data: {
-            currentEmail: 0,
             emailArray: []
         },
         methods: {
         },
         mounted() {
-            axios.get('https://flynn.boolean.careers/exercises/api/random/mail')
-            .then((response) => {
-               this.emailArray.push(response.data.response);
-            });
+            for(let i = 0; i < 10; i++) {
+                axios.get('https://flynn.boolean.careers/exercises/api/random/mail')
+                .then((response) => {
+                    // METODO OPERATORE TERNARIO
+                    // this.emailArray.includes(response.data.response) ? null : this.emailArray.push(response.data.response);
 
-            axios.get('https://flynn.boolean.careers/exercises/api/random/mail')
-            .then((response) => {
-               this.emailArray.push(response.data.response);
-            });
-
-            axios.get('https://flynn.boolean.careers/exercises/api/random/mail')
-            .then((response) => {
-                this.emailArray.push(response.data.response);
-            });
-
-            axios.get('https://flynn.boolean.careers/exercises/api/random/mail')
-            .then((response) => {
-                this.emailArray.push(response.data.response);
-            });
-
-            axios.get('https://flynn.boolean.careers/exercises/api/random/mail')
-            .then((response) => {
-                this.emailArray.push(response.data.response);
-            });
-
-            axios.get('https://flynn.boolean.careers/exercises/api/random/mail')
-            .then((response) => {
-                this.emailArray.push(response.data.response);
-            });
-
-            axios.get('https://flynn.boolean.careers/exercises/api/random/mail')
-            .then((response) => {
-                this.emailArray.push(response.data.response);
-            });
-
-            axios.get('https://flynn.boolean.careers/exercises/api/random/mail')
-            .then((response) => {
-                this.emailArray.push(response.data.response);
-            });
-
-            axios.get('https://flynn.boolean.careers/exercises/api/random/mail')
-            .then((response) => {
-                this.emailArray.push(response.data.response);
-            });
-
-            axios.get('https://flynn.boolean.careers/exercises/api/random/mail')
-            .then((response) => {
-                this.emailArray.push(response.data.response);
-            });
+                    // METODO IF
+                    if(!this.emailArray.includes(response.data.response)) {
+                        this.emailArray.push(response.data.response)
+                    } 
+                });
+            }
         }
     }
 );
