@@ -12,11 +12,13 @@
 <body>
 
     <div id="root">
-        <ul>
-            <li v-for="(email,currentEmail) in emailArray">
-                {{ emailArray[currentEmail] }}
-            </li>
-        </ul>
+        <div v-if="emailArray.length == 10">
+            <ul>
+                <li v-for="(email, currentEmail) in emailArray">
+                    {{ email }}
+                </li>
+            </ul>
+        </div>
     </div>
     <script type="text/javascript" src="js/script.js"></script>
 </body>
